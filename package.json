@@ -4,7 +4,9 @@
   "description": "A project highighting the use of ES6 modules.  Displays a page for a restaurant using tabs.",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "watch": "webpack --watch"
   },
   "repository": {
     "type": "git",
