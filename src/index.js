@@ -1,5 +1,7 @@
 "use strict";
 
+import getMainSection from './mainTab';
+
 function createTabMenu() {
 	const menuItems = ['Main', 'Menu', 'Contact'];
 
