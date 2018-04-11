@@ -1,6 +1,8 @@
 "use strict";
 
-import getMainSection from './mainTab';
+import { getMainSection } from './mainTab';
+import { getMenuSection } from './menuTab';
+import { getContactSection } from './contactTab';
 
 function createTabMenu() {
 	const menuItems = ['Main', 'Menu', 'Contact'];
@@ -37,7 +39,7 @@ function addTabListener(target) {
 	target.addEventListener('click', function(e) { makeTabActive(e); });
 }
 
-function makeTabActive(e) {
+function selectTab(e) {
 	const activeClass = 'selected';
 
 	// Find menu associated with '#main-nav'
@@ -61,9 +63,40 @@ function makeTabActive(e) {
 	}
 }
 
+function addContent(content) {
+	const parentElem = document.getElementById('container');
+	const mainContent = document.getElementById('main-section');
+
+	if (mainContent) {
+		parentElem.removeChild(mainContent);
+	}
+
+	parentElem.appendChild(content);
+
+}
+
+function makeTabActive(e) {
+	selectTab(e);
+
+	switch(e.target.textContent) {
+		case 'Main':
+			addContent(getMainSection());
+			break;
+		case 'Menu':
+			addContent(getMenuSection());
+			break;
+		case 'Contact':
+			addContent(getContactSection());
+			break;
+		default:
+			break;
+	}
+}
+
 function ready() {
 	createTabMenu();
 	createContentContainer();
+	addContent(getMainSection());
 }
 
 document.addEventListener("DOMContentLoaded", ready);
