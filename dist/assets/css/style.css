@@ -94,3 +94,16 @@ article h4 {
 #comments { 
   overflow: hidden;
 }
+
+.form-input {
+  width: 200px;
+  border: solid black 1px;
+  border-radius: 5px;
+}
+
+.btn {
+  background-color: lightgrey;
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+}

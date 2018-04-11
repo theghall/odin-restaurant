@@ -36,11 +36,13 @@ function setContent(content) {
 }
 
 function submitListener(e) {
+	e.preventDefault();
 	const form = e.target.parentNode;
 	const button = form.querySelectorAll('button'); // Only one button
 
 	if (form.checkValidity()) {
 		alert("Thank you for your comment.");
+		form.reset();
 	} else {
 		button[0].click();
 	}
