@@ -6,6 +6,9 @@
 }
 
 /* Tab menu items */
+/* Thanks to Chris Coyier for his article on tabs with round out borders. */
+/* While I didn't use the round out borders, I mainly used the it for */
+/* the "forefronting" of a tab */
 .tabrow {
   text-align: center;
   list-style: none;
@@ -29,6 +32,7 @@
 .tabrow:before {
   z-index: 1;
 }
+
 .tabrow li {
   margin: 0 10px;
   padding: 0 10px;
@@ -39,6 +43,7 @@
   z-index: 0;
 }
 
+/* z-index is the key here, the bottom border-color takes precedence */
 .tabrow li.selected {
   background: lightgoldenrodyellow;
   color: #000;
