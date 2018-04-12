@@ -37,6 +37,7 @@
   margin: 0 10px;
   padding: 0 10px;
   border: 1px solid #AAA;
+  border-radius: 15% 15% 0 0;
   background: lightyellow;
   display: inline-block;
   position: relative;
